@@ -91,7 +91,7 @@ variable "node_groups" {
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
-  default     = "1.28"
+  default     = "1.27"
 }
 variable "map_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."
