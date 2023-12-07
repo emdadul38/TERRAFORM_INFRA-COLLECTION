@@ -47,7 +47,7 @@ variable "create_admin_role" {
 variable "admin_role_name" {
   description = "Kubernetes Admin role name, defaults to KubernetesAdmin"
   type        = string
-  default     = "emdadul"
+  default     = "k8ssysadmin"
 }
 variable "admin_role_groups" {
   description = "K8S RBAC group for the admin role"
@@ -91,7 +91,7 @@ variable "node_groups" {
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
-  default     = "1.19"
+  default     = "1.28"
 }
 variable "map_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."

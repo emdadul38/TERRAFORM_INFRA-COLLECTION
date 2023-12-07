@@ -1,12 +1,12 @@
 terraform {
-  # backend "s3" {}
+  backend "s3" {}
 
-  required_version = ">= 0.13.0"
+  required_version = ">= 1.2.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.10"
+      version = "~> 4.16"
     }
 
     random = {
@@ -16,21 +16,21 @@ terraform {
 
     local = {
       source  = "hashicorp/local"
-      version = "~> 2.0.0"
+      version = "~> 2.4.0"
     }
 
     null = {
       source  = "hashicorp/null"
-      version = "~> 3.0.0"
+      version = "~> 3.2.2"
     }
 
     template = {
       source  = "hashicorp/template"
-      version = "~> 2.2"
+      version = "~> 2.2.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "~> 1.11"
+      version = "~> 2.24.0"
     }
   }
 }
@@ -64,7 +64,7 @@ locals {
 # Creating initial KubernetesAdmin role to use for assuming
 module "iam_assumable_role_admin" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 3.8"
+  version = "~> 5.32.0"
 
   create_role = var.create_admin_role
 
@@ -101,7 +101,7 @@ resource "aws_kms_key" "eks" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> v13.2.0"
+  version = "~> 19.0"
 
   cluster_name                         = var.cluster_name
   cluster_version                      = var.cluster_version
