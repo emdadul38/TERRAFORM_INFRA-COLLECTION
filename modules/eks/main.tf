@@ -39,7 +39,7 @@ provider "aws" {
   region  = var.region
   profile = var.profile
   shared_config_files = ["/home/emdad/.aws/config"]
-  shared_credentials_file = ["home/emdad/.aws/credentials"]
+  shared_credentials_file = ["/home/emdad/.aws/credentials"]
 }
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
