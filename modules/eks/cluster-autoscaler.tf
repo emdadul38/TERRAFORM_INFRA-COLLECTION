@@ -6,7 +6,7 @@ locals {
 
 module "iam_assumable_role_autoscaler" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version                       = "3.8.0"
+  version                       = "5.32.0"
   create_role                   = true
   role_name                     = "applooksee-cluster-autoscaler"
   provider_url                  = replace(module.eks.cluster_oidc_issuer_url, "https://", "")
