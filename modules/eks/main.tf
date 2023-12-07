@@ -38,12 +38,8 @@ terraform {
 provider "aws" {
   region  = var.region
   profile = var.profile
-  shared_config_files = [
-    var.profile != "" ? "~/.aws/config" : null
-  ]
-  shared_credentials_file = [
-    var.profile != "" ? "~/.aws/credentials" : null
-  ]
+  shared_config_files = ["~/.aws/config"]
+  shared_credentials_file = ["~/.aws/credentials"]
 }
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
