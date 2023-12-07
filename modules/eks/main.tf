@@ -37,6 +37,7 @@ terraform {
 
 provider "aws" {
   region = var.region
+  profile = var.profile
 }
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
