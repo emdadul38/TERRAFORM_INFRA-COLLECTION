@@ -6,7 +6,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.57"
+      version = "~> 5.0"
     }
 
     random = {
@@ -38,8 +38,8 @@ terraform {
 provider "aws" {
   region  = var.region
   profile = var.profile
-  shared_config_files = ["~/.aws/config"]
-  shared_credentials_file = ["~/.aws/credentials"]
+  shared_config_files = ["/home/emdad/.aws/config"]
+  shared_credentials_file = ["home/emdad/.aws/credentials"]
 }
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
