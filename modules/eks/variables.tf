@@ -42,7 +42,7 @@ variable "create_admin_role" {
 variable "admin_role_name" {
   description = "Kubernetes Admin role name, defaults to KubernetesAdmin"
   type        = string
-  default     = "K8sAdmin"
+  default     = "emdadul"
 }
 variable "admin_role_groups" {
   description = "K8S RBAC group for the admin role"
